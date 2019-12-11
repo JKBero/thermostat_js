@@ -5,10 +5,15 @@ describe('Thermostat', function(){
     var thermostat;
 
     beforeEach(function (){
-        thermostat = new Thermostat();
+      thermostat = new Thermostat();
     });
 
     it ('has a starting temp of 20 degrees', function(){
-        expect(thermostat._temperature).toEqual(20);
+      expect(thermostat._temperature).toEqual(20);
+    });
+
+    it ('increases the temp by 1 when using up function', function(){
+      thermostat.up();
+      expect(thermostat._temperature).toEqual(21);
     });
 });
