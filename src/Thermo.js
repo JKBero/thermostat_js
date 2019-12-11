@@ -32,6 +32,16 @@ Thermostat.prototype.switchPsmOn = function () {
     this._maximum = this._MAXIMUM_PSM_ON;
 };
 
-Thermostat.prototype.reset = function() {
-  this._temperature = this._DEFAULT_TEMP;
+Thermostat.prototype.reset = function () {
+    this._temperature = this._DEFAULT_TEMP;
+};
+
+Thermostat.prototype.energyLevel = function () {
+    if (this._temperature < 18) {
+        return "low-usage";
+    } else if (this._temperature < 25) {
+        return "medium-usage";
+    } else {
+        return "high-usage";
+    };
 };

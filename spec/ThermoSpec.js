@@ -60,8 +60,38 @@ describe('Thermostat', function () {
         expect(thermostat._temperature).toEqual(32);
     });
 
-    it("resets the temp to 20 degrees", function(){
-       thermostat.reset();
-       expect(thermostat._temperature).toEqual(20);
+    it("resets the temp to 20 degrees", function () {
+        thermostat.reset();
+        expect(thermostat._temperature).toEqual(20);
+    });
+
+    describe('shows energy usage levels', function () {
+
+        it("shows 'low-usage' when temp is under 18", function () {
+
+            for (var i = 0; i < 3; i++) {
+                thermostat.down();
+            }
+            expect(thermostat._temperature).toEqual(17);
+            expect(thermostat.energyLevel()).toEqual("low-usage");
+        });
+
+        it("shows 'medium-usage' when temp is >= 18 but <25", function () {
+
+            for (var i = 0; i < 4; i++) {
+                thermostat.up();
+            }
+            expect(thermostat._temperature).toEqual(24);
+            expect(thermostat.energyLevel()).toEqual("medium-usage");
+        });
+
+        it("shows 'high-usage' when temp is >=25", function () {
+
+            for (var i = 0; i < 5; i++) {
+                thermostat.up();
+            }
+            expect(thermostat._temperature).toEqual(25);
+            expect(thermostat.energyLevel()).toEqual("high-usage");
+        });
     });
 });
