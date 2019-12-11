@@ -29,14 +29,22 @@ describe('Thermostat', function () {
         expect(thermostat._temperature).toEqual(10);
     });
 
-    it("is set to power saving mode by default", function(){
-      expect(thermostat._powerSavingMode).toBeTrue();
+    it("is set to power saving mode by default", function () {
+        expect(thermostat._powerSavingMode).toBeTrue();
     });
 
-    it("has a maximum temp of 25 when PSM is on", function(){
-      for (var i = 0; i < 6; i++) {
-          thermostat.up();
-      }
-      expect(thermostat._temperature).toEqual(25);
+    it("has a maximum temp of 25 when PSM is on", function () {
+        for (var i = 0; i < 6; i++) {
+            thermostat.up();
+        };
+        expect(thermostat._temperature).toEqual(25);
+    });
+
+    it("has a maximum temp of 32 when PSM is off", function () {
+        thermostat.switchPsmOff();
+        for (var i = 0; i < 13; i++) {
+            thermostat.up();
+        }
+        expect(thermostat._temperature).toEqual(32);
     });
 });
