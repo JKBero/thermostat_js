@@ -42,7 +42,9 @@ describe('Thermostat', function () {
 
     it("has a maximum temp of 25 when PSM has been switched off and turned on again", function () {
         thermostat.switchPsmOff();
+        expect(thermostat._powerSavingMode).toBeFalse();
         thermostat.switchPsmOn();
+        expect(thermostat._powerSavingMode).toBeTrue();
         for (var i = 0; i < 6; i++) {
             thermostat.up();
         };
@@ -51,9 +53,15 @@ describe('Thermostat', function () {
 
     it("has a maximum temp of 32 when PSM is off", function () {
         thermostat.switchPsmOff();
+        expect(thermostat._powerSavingMode).toBeFalse();
         for (var i = 0; i < 13; i++) {
             thermostat.up();
         }
         expect(thermostat._temperature).toEqual(32);
+    });
+
+    it("resets the temp to 20 degrees", function(){
+       thermostat.reset();
+       expect(thermostat._temperature).toEqual(20);
     });
 });
