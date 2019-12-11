@@ -40,6 +40,15 @@ describe('Thermostat', function () {
         expect(thermostat._temperature).toEqual(25);
     });
 
+    it("has a maximum temp of 25 when PSM has been switched off and turned on again", function () {
+        thermostat.switchPsmOff();
+        thermostat.switchPsmOn();
+        for (var i = 0; i < 6; i++) {
+            thermostat.up();
+        };
+        expect(thermostat._temperature).toEqual(25);
+    });
+
     it("has a maximum temp of 32 when PSM is off", function () {
         thermostat.switchPsmOff();
         for (var i = 0; i < 13; i++) {

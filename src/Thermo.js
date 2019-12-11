@@ -25,3 +25,8 @@ Thermostat.prototype.switchPsmOff = function () {
     this._powerSavingMode = false;
     this._maximum = this._MAXIMUM_PSM_OFF;
 };
+
+Thermostat.prototype.switchPsmOn = function () {
+    this._powerSavingMode = true;
+    this._maximum = this._MAXIMUM_PSM_ON;
+};
