@@ -1,1 +1,1 @@
-# thermostat_js
+# Thermostat challenge
