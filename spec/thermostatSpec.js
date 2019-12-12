@@ -9,24 +9,24 @@ describe('Thermostat', function () {
     });
 
     it('has a starting temp of 20 degrees', function () {
-        expect(thermostat._temperature).toEqual(20);
+        expect(thermostat.temperature).toEqual(20);
     });
 
     it('increases the temp by 1 when using up function', function () {
         thermostat.up();
-        expect(thermostat._temperature).toEqual(21);
+        expect(thermostat.temperature).toEqual(21);
     });
 
     it('decreases the temp by 1 when using down function', function () {
         thermostat.down();
-        expect(thermostat._temperature).toEqual(19);
+        expect(thermostat.temperature).toEqual(19);
     });
 
     it("doesn't go lower than 10 degrees", function () {
         for (var i = 0; i < 11; i++) {
             thermostat.down();
         }
-        expect(thermostat._temperature).toEqual(10);
+        expect(thermostat.temperature).toEqual(10);
     });
 
     it("is set to power saving mode by default", function () {
@@ -37,7 +37,7 @@ describe('Thermostat', function () {
         for (var i = 0; i < 6; i++) {
             thermostat.up();
         };
-        expect(thermostat._temperature).toEqual(25);
+        expect(thermostat.temperature).toEqual(25);
     });
 
     it("has a maximum temp of 25 when PSM has been switched off and turned on again", function () {
@@ -48,7 +48,7 @@ describe('Thermostat', function () {
         for (var i = 0; i < 6; i++) {
             thermostat.up();
         };
-        expect(thermostat._temperature).toEqual(25);
+        expect(thermostat.temperature).toEqual(25);
     });
 
     it("has a maximum temp of 32 when PSM is off", function () {
@@ -57,12 +57,12 @@ describe('Thermostat', function () {
         for (var i = 0; i < 13; i++) {
             thermostat.up();
         }
-        expect(thermostat._temperature).toEqual(32);
+        expect(thermostat.temperature).toEqual(32);
     });
 
     it("resets the temp to 20 degrees", function () {
         thermostat.reset();
-        expect(thermostat._temperature).toEqual(20);
+        expect(thermostat.temperature).toEqual(20);
     });
 
     describe('shows energy usage levels', function () {
@@ -72,7 +72,7 @@ describe('Thermostat', function () {
             for (var i = 0; i < 3; i++) {
                 thermostat.down();
             }
-            expect(thermostat._temperature).toEqual(17);
+            expect(thermostat.temperature).toEqual(17);
             expect(thermostat.energyLevel()).toEqual("low-usage");
         });
 
@@ -81,7 +81,7 @@ describe('Thermostat', function () {
             for (var i = 0; i < 4; i++) {
                 thermostat.up();
             }
-            expect(thermostat._temperature).toEqual(24);
+            expect(thermostat.temperature).toEqual(24);
             expect(thermostat.energyLevel()).toEqual("medium-usage");
         });
 
@@ -90,7 +90,7 @@ describe('Thermostat', function () {
             for (var i = 0; i < 5; i++) {
                 thermostat.up();
             }
-            expect(thermostat._temperature).toEqual(25);
+            expect(thermostat.temperature).toEqual(25);
             expect(thermostat.energyLevel()).toEqual("high-usage");
         });
     });
