@@ -30,8 +30,8 @@
 
     <div class="first-section">
       <text id="temp"></text>
-      <button class="dial">+</button>
-      <button class="dial">-</button>
+      <button class="dial" id="up">+</button>
+      <button class="dial" id="down">-</button>
     </div>
 
     <div class="lines"></div>
@@ -46,24 +46,24 @@
         <button class="close">Close</button>
       </section>
 
-      Power Saving Mode:
+      <text class="psm">Power Saving Mode:</text>
 
-      <button id="psm-on" class="green">Switch On</button>
+      <button id="psm-on" class="green">ON</button>
 
-      <button id="psm-off">Switch Off</button>
+      <button id="psm-off">OFF</button>
     </div>
     <br>
 
     <div class="third-section">
-    Select city:
+    <text class="city-text">Select city:</text>
     <select id="city">
       <option value="leeds">Leeds</option>
       <option value="london">London</option>
       <option value="manchester">Manchester</option>
       <option value="oxford">Oxford</option>
     </select>
-
-    <p id="local-temp"> </p>
+    <br>
+    <text id="local-temp"> </text>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>

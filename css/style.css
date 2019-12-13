@@ -2,7 +2,7 @@
 body {
   background-color: #ffffea;
   margin: auto;
-  max-width: 50%;
+  max-width: 55%;
   text-align: center;
   padding: 30px;
 }
@@ -80,9 +80,10 @@ strong { display: block; text-align: center; }
 
 #temp {
   font-family: 'Titillium Web', sans-serif;
-  font-size: 50px;
+  font-size: 60px;
   color: rgb(72,72,72);
   display: inline-block;
+  padding-right: 10px;
 }
 
 .dial {
@@ -94,6 +95,8 @@ strong { display: block; text-align: center; }
   font-size: 30px;
   font-weight: bolder;
   color: rgb(72,72,72);
+  position: relative;
+    bottom: 10px;
 }
 
 .dial:hover {
@@ -101,19 +104,85 @@ strong { display: block; text-align: center; }
 }
 
 .second-section {
-  display: block;
-  margin: auto;
-  width: 100%;
-  padding: 20px 0;
+  margin-top: 20px;
+}
+
+#reset {
+  background: rgb(169,169,169);
+  border-radius: 20%;
   text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  position: relative;
+    right: 30px;
+}
+
+#energy-usage-button {
+  background: rgb(169,169,169);
+  border-radius: 20%;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  position: relative;
+    right: 20px;
+}
+
+.psm {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  color: rgb(72,72,72);
+}
+
+#psm-on, #psm-off {
+  border-radius: 20%;
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
+  position: relative;
+    left: 5px;
 }
 
 .third-section {
-  display: block;
-  margin: auto;
-  width: 100%;
-  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.city-text {
   text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  color: rgb(72,72,72);
+  position: relative;
+    right: 10px;
+}
+
+#city {
+  text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  color: rgb(72,72,72);
+}
+
+#city {
+  background: rgb(184,0,0);
+  color: white;
+  font-size: 20px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+#local-temp {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 40px;
+  font-style: oblique;
+  color: rgb(72,72,72);
 }
 
 .pop-up {
