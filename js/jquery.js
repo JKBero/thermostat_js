@@ -34,6 +34,7 @@ $(document).ready(function() {
     thermostat.switchPsmOn();
     $(this).addClass('green');
     $("#psm-off").removeClass('green');
+    $("#temp").text(`Current Temperature: ${thermostat.temperature}°C`);
   });
 
   $("#psm-off").click(function() {
@@ -46,8 +47,7 @@ $(document).ready(function() {
     var city = $("#city option:selected").text()
     $.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},uk&APPID=d3b4e49d7817c363daf01d1177040cef`, function(data) {
       var temp = (data.main.temp - 273.15).toFixed(2);
-      $("#local-temp").text(`London weather: ${temp}°C`);
-      $("#local-temp").text(`${city} temperature: ${temp}`);
+      $("#local-temp").text(`${city} temperature: ${temp}°C`);
     });
   });
 
