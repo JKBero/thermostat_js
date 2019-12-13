@@ -4,21 +4,21 @@ $(document).ready(function() {
 
   var thermostat = new Thermostat();
 
-  $("#temp").text(`Current Temperature: ${thermostat.temperature}°C`);
+  $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
 
   $("#up").click(function() {
     thermostat.up();
-    $("#temp").text(`Current Temperature: ${thermostat.temperature}°C`);
+    $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
   $("#down").click(function() {
     thermostat.down();
-    $("#temp").text(`Current Temperature: ${thermostat.temperature}°C`);
+    $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
   $("#reset").click(function() {
     thermostat.reset();
-    $("#temp").text(`Current Temperature: ${thermostat.temperature}°C`);
+    $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
   $("#energy-usage-button").click(function() {
@@ -34,7 +34,7 @@ $(document).ready(function() {
     thermostat.switchPsmOn();
     $(this).addClass('green');
     $("#psm-off").removeClass('green');
-    $("#temp").text(`Current Temperature: ${thermostat.temperature}°C`);
+    $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
   $("#psm-off").click(function() {

@@ -1,4 +1,18 @@
  /* Thermostat styling */
+body {
+  background-color: #ffffea;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 80px;
+}
+
+#temp {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 60px;
+  color: rgb(72,72,72);
+}
+
 .pop-up {
   display: none;
   position: fixed;
@@ -12,4 +26,70 @@
 
 .green {
   background-color: green;
+}
+
+.thermostat {
+  margin: auto;
+  width: 100px;
+}
+
+.glass {
+  background: #e5e5e5;
+  border-radius: 100px 100px 0 0;
+  display: block;
+  height: 400px;
+  padding: 5px;
+  position: relative;
+  width: 80px;
+}
+
+.amount {
+  background: rgb(184,0,0);
+  border-radius: 100px;
+  display: block;
+  width: 70px;
+  position: absolute;
+  bottom: 5px;
+}
+
+strong { display: block; text-align: center; }
+
+.total {
+  font-size: 16px;
+  position: absolute;
+  right: 90px;
+}
+
+.bulb {
+  background: #e5e5e5;
+  border-radius: 100px;
+  display: block;
+  height: 130px;
+  margin: 100 50px 5px;
+  padding: 5px;
+  position: relative;
+    top: -30px;
+    right: 20px;
+  width: 130px;
+}
+
+.red-circle {
+  background: rgb(184,0,0);
+  border-radius: 100px;
+  display: block;
+  height: 120px;
+  width: 120px;
+}
+
+.filler {
+  background: rgb(184,0,0);
+  border-radius: 100px 100px 0 0;
+  display: block;
+  height: 80px;
+  width: 70px;
+  position: relative;
+    top: -180px;
+    right: -15px;
+    left: 20px;
+  z-index: 30;
 }

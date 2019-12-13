@@ -5,16 +5,30 @@
     <meta charset="utf-8">
     <title>Thermostat</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Titillium+Web:200&display=swap">
   </head>
 
   <body>
-    <h1> Hello! I am a thermostat! </h1>
+
+    <div class="thermostat">
+      <span class="glass">
+          <strong class="total" style="bottom: 40%">$4,500</strong>
+          <span class="amount" style="height: 90%"></span>
+      </span>
+      <div class="bulb">
+          <span class="red-circle"></span>
+          <span class="filler">
+              <span></span>
+          </span>
+      </div>
+    </div>
+
+    <h1 id="temp"></h1>
 
     <button id="up">+</button>
 
     <button id="down">-</button>
-
-    <h3 id="temp"></h3>
 
     <button id="reset">Reset</button>
 
@@ -42,7 +56,6 @@
     </select>
 
     <p id="local-temp"> </p>
-
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.js"></script>
