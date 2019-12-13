@@ -6,18 +6,31 @@ $(document).ready(function() {
 
   $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
 
+  $('.temp-marker').attr('style', `height: 55%`);
+
   $("#up").click(function() {
     thermostat.up();
+    if (thermostat.temperature < thermostat._maximum) {
+      var currentHeight = parseFloat(($('.temp-marker')[0].style.height));
+      var newHeight = (currentHeight + 4);
+      $('.temp-marker').attr('style', `height: ${newHeight}%`);
+    };
     $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
   $("#down").click(function() {
     thermostat.down();
+    if (thermostat.temperature > thermostat._MINIMUM) {
+      var currentHeight = parseFloat(($('.temp-marker')[0].style.height));
+      var newHeight = (currentHeight - 4);
+      $('.temp-marker').attr('style', `height: ${newHeight}%`);
+    };
     $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
   $("#reset").click(function() {
     thermostat.reset();
+    $('.temp-marker').attr('style', `height: 55%`);
     $("#temp").text(`${thermostat.temperature} DEGREES CELSIUS`);
   });
 
@@ -31,6 +44,9 @@ $(document).ready(function() {
   });
 
   $("#psm-on").click(function() {
+    if (thermostat.temperature > thermostat._MAXIMUM_PSM_ON) {
+      $('.temp-marker').attr('style', `height: 71%`);
+    };
     thermostat.switchPsmOn();
     $(this).addClass('green');
     $("#psm-off").removeClass('green');

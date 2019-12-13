@@ -13,8 +13,7 @@
 
     <div class="thermostat">
       <span class="glass">
-          <strong class="total" style="bottom: 40%">$4,500</strong>
-          <span class="amount" style="height: 90%"></span>
+          <span class="temp-marker" style="height: 15%"></span>
       </span>
       <div class="bulb">
           <span class="red-circle"></span>
@@ -24,29 +23,38 @@
       </div>
     </div>
 
-    <h1 id="temp"></h1>
+    <!-- <svg class="lines">
+      <line x1="0" y1="0" x2="3000" y2="0"/>
+    </svg> -->
+    <div class="lines"></div>
 
-    <button id="up">+</button>
+    <div class="first-section">
+      <text id="temp"></text>
+      <button class="dial">+</button>
+      <button class="dial">-</button>
+    </div>
 
-    <button id="down">-</button>
+    <div class="lines"></div>
 
-    <button id="reset">Reset</button>
+    <div class="second-section">
+      <button id="reset">Reset</button>
 
-    <button id="energy-usage-button">Energy Usage</button>
+      <button id="energy-usage-button">Energy Usage</button>
 
-    <section class="pop-up">
-      <h3 class="energy-usage"></h3>
-      <button class="close">Close</button>
-    </section>
+      <section class="pop-up">
+        <h3 class="energy-usage"></h3>
+        <button class="close">Close</button>
+      </section>
 
-    Power Saving Mode:
+      Power Saving Mode:
 
-    <button id="psm-on" class="green">Switch On</button>
+      <button id="psm-on" class="green">Switch On</button>
 
-    <button id="psm-off">Switch Off</button>
-
+      <button id="psm-off">Switch Off</button>
+    </div>
     <br>
 
+    <div class="third-section">
     Select city:
     <select id="city">
       <option value="leeds">Leeds</option>
@@ -56,6 +64,7 @@
     </select>
 
     <p id="local-temp"> </p>
+    </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.js"></script>
