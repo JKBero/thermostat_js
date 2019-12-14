@@ -36,6 +36,12 @@ $(document).ready(function() {
 
   $("#energy-usage-button").click(function() {
     $(".pop-up").slideDown();
+    if (thermostat.energyLevel() == "low-usage") {
+      $(".pop-up").css('background-color', 'green' ); };
+    if (thermostat.energyLevel() == "medium-usage") {
+      $(".pop-up").css('background-color', 'black' ); };
+    if (thermostat.energyLevel() == "high-usage") {
+      $(".pop-up").css('background-color', 'red' ); };
     $(".energy-usage").text(thermostat.energyLevel());
   });
 

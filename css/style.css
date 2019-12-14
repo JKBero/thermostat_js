@@ -23,6 +23,13 @@ body {
   width: 80px;
 }
 
+.ruler-lines {
+  transform: rotate(90deg);
+  position: relative;
+    right: 230px;
+    top: 132px;
+}
+
 .temp-marker {
   background: rgb(184,0,0);
   border-radius: 100px;
@@ -69,7 +76,6 @@ strong { display: block; text-align: center; }
     right: -30px;
     left: 25px;
     bottom: -100px;
-  z-index: 30;
 }
 
 .lines {
@@ -193,9 +199,25 @@ strong { display: block; text-align: center; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 200px;
-  width: 200px;
-  background: gray;
+  border-radius: 30%;
+  height: 150px;
+  width: 150px;
+  background: black;
+  border-radius: 100;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.close {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+  font-weight: bolder;
+  text-align: center;
+  color: black;
+  border-radius: 20%;
+  position: relative;
+    bottom: 20px;
 }
 
 .green {
