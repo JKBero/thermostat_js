@@ -80,7 +80,7 @@ strong { display: block; text-align: center; }
 
 .lines {
   border-top: 2px solid rgb(169,169,169);
-  width: 80%;
+  max-width: 80%;
   position: relative;
     right: -80px;
 }
